@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script type="text/javascript">
+            function selectChoice(Selected){
+
+                // Get the element which triggered the event
+                let button = Selected.target;
+
+                // Check if the element's inner HTML matches expected answer
+                if (button.innerHTML == '42') {
+                    button.style.backgroundColor = "#e0b3ff";
+                    button.parentElement.querySelector('.Response').innerHTML = 'Hehehe, you know me so well';
+                }
+                else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.Response').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the answer to life, the universe, and everything?</h3>
+            <!-- Add multiple choice question here -->
+                <button onclick="selectChoice(Selected)">Something</button>
+                <br>
+                <button onclick="selectChoice(Selected)">There is no 1 answer</button>
+                <br>
+                <button onclick="selectChoice(Selected)">42</button>
+                <br>
+                <button onclick="selectChoice(Selected)">The answer is not so much an answer as it is an enlightment. The purpose of life is not to serve oneself but to serve those around them. One does not have to be perfect, mind you, as every human is a little selfiish but all should strive to help those around them where possible. Life is not a prison that holds us, the universe gives humanity the purpose to explore if nothing else, which means that life is but a vessel to get humanity to it's purpose by forcing a bunch of humans to work together. If you perhaps think that the purpose of the universe is not to be explored but simply as a place we live, then life is for allowing humans the oppurtunity to keep going. Every human that works with another and leaves their life a bit better is successful. Every human does not have to be perfect, they just have to be a slight bit better than the meanest person they know to make a positive impact. Always remember that when there's no purpose, there is teamwork.</button>
+            <p class="Response"></p>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>When you GM says "Are you sure?" and you say "Yes", what is the first thing you should do?</hr>
+                <!--Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>
+
