@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="post">
+        <div class="mb-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-start">Symbol</th>
+                        <th class="text-center">Shares</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-end">Transacted</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for row in rows %}
+                        <tr>
+                            <td class="text-start">{{ row.symbol }}</td>
+                            <td class="text-center">{{ row.shares }}</td>
+                            <td class="text-center">{{ row.price | usd }}</td>
+                            <td class="text-end">{{ row.transacted }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}
